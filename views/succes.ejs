@@ -1,0 +1,302 @@
+<%- include('partials/header') %>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <h1>Welcome <%=pats[pats.length-1].patientName %> </h1>
+    <h6> Thank You for registering </h6>
+    <h3><a href="/register">Back to register</a></h3>
+
+  </li>
+
+
+</ul>
+<div class="card" style="width: 18rem; left: 150px">
+  <div class="card-body">
+    <strong><u>
+        <h5 class="card-title">Patient Profile</h5>
+      </u></strong>
+    <h6 class="card-subtitle mb-2 text-muted">Name:- <%=pats[pats.length-1].patientName %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted">Sex:- <%=pats[pats.length-1].patientSex %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Blood Group:- <%=pats[pats.length-1].patientBldgp %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Area :-<%=pats[pats.length-1].patientArea %></h6>
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a> -->
+  </div>
+</div>
+
+
+
+<!-- Doctor Card -->
+<% console.log(pats[pats.length-1].patientArea);%>
+
+<% for (var i = 0; i < dots.length;   i++) { %>
+
+<% if (dots[i].doctorArea === pats[pats.length-1].patientArea) { %>
+
+<div style="margin-left: 66px;margin-top: 17px;margin-bottom: 10px;">
+  <h5> We found the Doctor listed which us in your area:- </h5>
+</div>
+<div class="card" style="width: 18rem; left: 150px">
+  <div class="card-body">
+    <strong><u>
+        <h5 class="card-title">Doctor Profile</h5>
+      </u></strong>
+    <h6 class="card-subtitle mb-2 text-muted">Name:-<%=dots[i].doctorName %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted">Doctor Specilization:- <%=dots[i].doctorSpecilization %></h6>
+    <h6 class="card-subtitle mb-2 text-muted"> Doctor Phoneno:-<a href="tel:+91<%= dots[i].doctorPhoneno%>"><i
+          class="fa-solid fa-2x fa-phone"></i></a></h6>
+    <h6 class="card-subtitle mb-2 text-muted"> Doctor Area:-<%=dots[i].doctorArea %></h6>
+
+  </div>
+</div>
+
+<% } %>
+<% } %>
+
+<!-- Department Card -->
+<% console.log(dets);%>
+
+<% for (var i = 0; i < dets.length;   i++) { %>
+
+<% if (dets[i].departmentArea === pats[pats.length-1].patientArea) { %>
+
+<div style="margin-left: 66px;margin-top: 17px;margin-bottom: 10px;">
+  <h5> We found the Clinic listed which us in your area:- </h5>
+</div>
+<div class="card" style="width: 18rem; left: 150px">
+  <div class="card-body">
+    <strong><u>
+        <h5 class="card-title">Cinic Profile</h5>
+      </u></strong>
+    <h6 class="card-subtitle mb-2 text-muted"> Cinic Name:-<%=dets[i].deparmentName %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted">Cinic Head:- <%=dets[i].deparmentHead %></h6>
+    <h6 class="card-subtitle mb-2 text-muted"> Clinic Phoneno:-<a href="tel:+91<%= dots[i].doctorPhoneno%>"><i
+          class="fa-solid fa-2x fa-phone"></i></a></h6>
+    <h6 class="card-subtitle mb-2 text-muted"> Clinic Area:-<%=dets[i].departmentArea %></h6>
+
+  </div>
+</div>
+
+<% } %>
+<% } %>
+
+
+<!-- <console.log(pats) %> -->
+
+<div style="margin-top: 15px;">
+  <a href="#exampleModal" style="top:25px;" data-bs-toggle="modal"><button class="btn-bk" type="button">List The
+      all Doctor which are Available</button></a>
+  <a href="#Clinic" style="top:25px;" data-bs-toggle="modal"><button class="btn-bk" type="button">List The all Clinic
+      which are Available</button></a>
+</div>
+
+
+
+
+
+
+
+
+<!-- Modal1 Star here -->
+<div class="modal fade" id="bookappointment" aria-hidden="true" aria-labelledby="bookappointment" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <h5>Your Appointment is Books</h5>
+        </ul>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal1 End here -->
+
+
+<!-- modal 2 stared here -->
+<div class="modal fade" id="exampleModal" aria-hidden="true" aria-labelledby="exampleModalLabel"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="width: 772px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">List of Doctor which are registesed with us</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <table id="appointment" style="width:25%;margin-top: 18px;">
+          <div class="">
+
+          </div>
+          <tr>
+            <th>Doctor Full name</th>
+            <th>Speclization</th>
+            <th>Year of Experience</th>
+            <th>Doctor Area </th>
+            <!-- <th> Book Appointment</th> -->
+          </tr>
+          <tr>
+
+            <td>
+              <h3><a
+                  href="https://www.healthfrog.in/doctor/dr-amita-patils-dentserve-multispeciality-dental-clinic-thane-fxp39ihh@.html">Dr
+                  Amita Patil</a></h3>
+            </td>
+            <td>DentServe Multispeciality Dental Clinic</td>
+            <td>15</td>
+            <td>
+              <p><i class="fa fa-map-marker"></i>Maharashtra</p>
+            </td>
+
+          </tr>
+          <tr>
+            <td>Dr. Poornima's</td>
+            <td>Neurodiagnosis Clinic</td>
+            <td>15</td>
+            <td>
+              <p><i class="fa fa-map-marker"></i>Mumbai</p>
+            </td>
+
+          </tr>
+          <tr>
+            <td>
+              <h3><a href="https://www.healthfrog.in/doctor/dr-pawan-rathi-mind-center-indore-indore-e@af0ihec.html">Dr
+                  Pawan
+                </a></h3>
+            </td>
+            <td>Rathi Mind Center Indore</td>
+            <td>10</td>
+            <td>
+              <p><i class="fa fa-map-marker"></i> Indore</p>
+            </td>
+
+          </tr>
+          <tr>
+            <td><a
+                href="https://www.healthfrog.in/doctor/dr-manoj-dongare-best-liver-transpkant-surgeon-in-pune-liver-specialist-in-pune-pune-7q8@9w4dh.html">Dr.
+                Manoj Dongare</a></h3>
+            </td>
+            <td>- Best Liver Transpkant Surgeon In Pune | Liver Specialist</td>
+            <td>12</td>
+            <td><i class="fa fa-map-marker"></i>Pune</td>
+          </tr>
+          <tr>
+            <td>
+              <p>Dr. D. Y. Patil Hospital </p>
+            </td>
+            <td> Research Centre, Sant Tukaram Nagar</td>
+            <td>7</td>
+            <td><i class="fa fa-map-marker"></i>Pune</td>
+
+          </tr>
+
+          <% for (var i = 0; i < dots.length;   i++) { %>
+
+          <tr>
+            <td><%= dots[i].doctorName%></td>
+            <td><%= dots[i].doctorSpecilization%></td>
+            <td><%= dots[i].YearofExperience%></td>
+            <td><i class="fa fa-map-marker"></i><%= dots[i].doctorArea%></td>
+
+          </tr>
+          <% } %>
+          </tr>
+  </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Clinic  modal Stared here-->
+<div class="modal fade" id="Clinic" aria-hidden="true" aria-labelledby="exampleModalLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="width: 772px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">List of Doctor which are registesed with us</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- table  -->
+        <table id="appointment" style="width:25%;margin-top: 18px;">
+          <div class="">
+
+          </div>
+          <tr>
+            <th>Name of Department</th>
+            <th>Department Head</th>
+            <th>Department Area</th>
+            <th>No of Employment</th>
+            <th>Department Phoneno</th>
+          </tr>
+          <tr>
+            <td>DentServe Multispeciality Dental Clinic</td>
+            <td>
+              <h3><a
+                  href="https://www.healthfrog.in/doctor/dr-amita-patils-dentserve-multispeciality-dental-clinic-thane-fxp39ihh@.html">Dr
+                  Amita Patil</a></h3>
+            </td>
+            <td>
+              <p><i class="fa fa-map-marker"></i>Maharashtra</p>
+            </td>
+            <td>15</td>
+            <td><a href="tel:+918965721"></a></td>
+
+
+          </tr>
+          <tr>
+            <td>Neurodiagnosis Clinic</td>
+            <td>Dr. Poornima's</td>
+            <td>
+              <p><i class="fa fa-map-marker"></i>Mumbai</p>
+            </td>
+            <td>15</td>
+            <td>+9178451230571</td>
+
+          </tr>
+          <tr>
+            <td>Rathi Mind Center Indore</td>
+            <td>
+              <h3><a href="https://www.healthfrog.in/doctor/dr-pawan-rathi-mind-center-indore-indore-e@af0ihec.html">Dr
+                  Pawan
+                </a></h3>
+            </td>
+            <td>
+              <p><i class="fa fa-map-marker"></i> Indore</p>
+            </td>
+            <td>10</td>
+            <td><a href="tel:+91785106215"></a></td>
+
+          </tr>
+          <% for (var i = 0; i < dets.length;  i++) { %>
+          <tr>
+            <td><%= dets[i].deparmentName%></td>
+            <td><%= dets[i].deparmentHead%></td>
+            <td><%= dets[i].departmentArea%></td>
+            <td><%= dets[i].deparmentEmployment%></td>
+            <td><%= dets[i].deparmentPhoneNumber%></td>
+
+          </tr>
+          <% } %>
+          </tr>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

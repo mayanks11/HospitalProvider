@@ -1,0 +1,18 @@
+<table id="customers">
+    <tr>
+       <th>Doctor Full name</th><th>Speclization</th><th>Year of Experience</th><th>Doctor Number</th><th>Doctor Area </th>
+    </tr>
+ 
+    <% for (var i = 0; i < dots.length;   i++) { %>
+       
+     <tr>
+       <td><%= dots[i].doctorName%></td>
+       <td><%= dots[i].doctorSpecilization%></td>   
+       <td><%= dots[i].YearofExperience%></td>
+       
+      <td><a href="tel:+91<%= dots[i].doctorPhoneno%>"><%= dots[i].doctorPhoneno%></a></td>
+      <td><%= dots[i].doctorArea%></td>
+       
+     </tr>    
+    <% } %>
+ </table>

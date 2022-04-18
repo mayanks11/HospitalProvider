@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+<nav class="navbar navbar-light bg-Success">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Medicare</a>
+ 
+      <a class="nav-link" href="/recherach">Add Cilic</a>
+      
+      <a class="nav-link" href="/Doc">Add Doctor</a>
+      
+      
+      
+      <form class="d-flex">
+        <a class="nav-link dropdown-toggle" href="#" id="login" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Login / Register
+        </a>
+          <ul class="dropdown-menu " aria-labelledby="login" style="">
+          
+          <li><a class="dropdown-item" href="/register">Register</a></li>
+          <li><a class="dropdown-item " href="/login">Login</a></li>
+        </ul>
+    </form>
+    </div>
+  </nav>
+  
+  
+
+<!-- reacher table -->
+
+<!-- patient table -->
+<%- include('table/patienTable') %>
+<!-- doctor table -->
+<%- include('table/doctorTable') %>
+<!-- reacher table -->
+<%- include('table/reacherTable') %>
+<!-- footer -->
+<%- include('partials/footer') %>
+
+
+
+
+  
+  <%- include('partials/footer') %>
