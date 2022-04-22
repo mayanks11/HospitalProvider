@@ -86,7 +86,7 @@ app.get("/",function(req,res){
 app.get("/login",function(req,res){
     res.render("login");
 });
-app.get("/admin",function(req,res){
+app.get("/About",function(req,res){
     Patient.find({},function(err,patient){
         Doctor.find({},function(err,doctors){
             Deparment.find({},function(err,departs){
@@ -161,8 +161,36 @@ app.post("/login",function(req,res){
  });
 
 // Inside the hospital provider
-
-
+app.get("/admin",function(req,res){
+    res.render("Aboutus");
+});
+app.get("/LisDoc",function(req,res){
+    Patient.find({},function(err,patient){
+        Doctor.find({},function(err,doctors){
+            Deparment.find({},function(err,departs){
+                res.render("Doctor",{pats:patient,dots:doctors,dets:departs});
+            });
+        });
+    }); 
+});
+app.get("/Lisclinic",function(req,res){
+    Patient.find({},function(err,patient){
+        Doctor.find({},function(err,doctors){
+            Deparment.find({},function(err,departs){
+                res.render("clinic",{pats:patient,dots:doctors,dets:departs});
+            });
+        });
+    }); 
+});
+app.get("/Lispatient",function(req,res){
+    Patient.find({},function(err,patient){
+        Doctor.find({},function(err,doctors){
+            Deparment.find({},function(err,departs){
+                res.render("patient",{pats:patient,dots:doctors,dets:departs});
+            });
+        });
+    }); 
+});
 app.get("/patientForm",function(req,res){       
     res.render("patientForm");
 });
@@ -217,9 +245,23 @@ app.post("/reacherDept",function(req,res){
     res.redirect("/departmentForm");
     
 });
+app.post("/delete",function(req,res){
+    // const Doctorcheck=req.body.checkbox
+    console.log(); 
+    Doctor.findByIdAndRemove(Doctorcheck,function(err){
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log("Successfully remove the item");
+            res.redirect("/admin") 
+        }
+
+    })
+     
+});
 
 
- 
  app.listen(process.env.PORT|| 2000,function(){
      console.log("Server is running on port 2000");
  });

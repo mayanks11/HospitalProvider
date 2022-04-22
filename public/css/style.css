@@ -1,21 +1,35 @@
+body{
+  background-color: white;
+}
+.fonts{
+  font-size: 30px;
+}
 .nav{
   position: sticky;
   bottom: 1rem;
 }
+.logo-image{
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+}
 /* table */
 #customers {
-    margin: 120px 70px 20px 30px;
+    margin: 120px 90px 20px 208px;
+    /* margin: 120px 70px 20px 208px; */
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 20%;
   }
   
   #customers td, #customers th {
-    border: 1px solid #ddd;
+    border: 1px solid #11c62f;
     padding: 20px;
   }
   
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  #customers tr:nth-child(even){background-color: #11c62f;}
   
   #customers tr:hover {background-color: #ddd;}
   
@@ -23,7 +37,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #04AA6D;
+    background-color: #200688;
     color: white;
   }
 /* success  star */
@@ -39,16 +53,16 @@
   padding: 20px;
 }
 
-#appointment tr:nth-child(even){background-color: #f2f2f2;}
+#appointment tr:nth-child(even){background-color: #11c62f;}
 
-#appointment tr:hover {background-color: #ddd;}
+#appointment tr:hover {background-color: rgb(221, 221, 221);}
 
 #appointment th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04AA6D;
-  color: white;
+  background-color: #200688;
+  color: rgb(29, 174, 166);
 }
 .btn-bk {
   margin-left: 45px;
@@ -59,7 +73,7 @@
   color: #a318a3;
   font-size: 20px;
   padding: 8px;
-  background: #75ff19;
+  background: #1554ac;
   text-decoration: none;
 }
 

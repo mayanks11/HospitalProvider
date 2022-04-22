@@ -1,20 +1,26 @@
 console.log("In public section ");
 
 console.log("Running");
-// document.querySelector('.cross').style.display = 'none';
-// document.querySelector('.hamburger').addEventListener("click", ()=>{
-  
-//     document.querySelector('.main-sidebar').classList.toggle('sidebarGo');
-   
-//     if( document.querySelector('.main-sidebar').classList.contains('sidebarGo')){
-//         document.querySelector('.ham').style.display = 'inline';
-//         document.querySelector('.cross').style.display = 'none';
+const menu = document.querySelector(".main-sidebar");
+const menuItems = document.querySelectorAll(".sidebarGo");
+const hamburger= document.querySelector(".ham");
+const closeIcon= document.querySelector(".cross");
+const menuIcon = document.querySelector(".menuIcon");
 
-//     }else{
-//         document.querySelector('.ham').style.display = 'none';
-//         document.querySelector('.cross').style.display = 'inline';
-//     }
-// }) 
+
+
+document.querySelector('.cross').style.display = 'none';
+document.querySelector('.hamburger').addEventListener("click", ()=>{
+  
+    document.querySelector('.main-sidebar').classList.toggle('sidebarGo');
+   
+    if( document.querySelector('.main-sidebar').classList.contains('sidebarGo')){
+        document.querySelector('.ham').style.display = 'inline';
+        document.querySelector('.cross').style.display = 'none';
+    }
+
+   
+}); 
 function func(){
     var checkboxes = document.querySelectorAll("input[type ='checkbox']");
     // function checkAll(myChechbox){
