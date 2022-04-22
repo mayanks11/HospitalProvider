@@ -1,13 +1,21 @@
 <%- include('partials/header') %>
 <%- include('partials/navbar2') %>
 <%- include('partials/sidebar') %>
+
+
 <div class="" >
-<div style="margin-left: 150.;margin-left: 600px;margin-top: 10px;">
-    <h1>List the doctor</h1>
+    <% if (dots.length !=0) { %>
+    <div style="margin-left: 150.;margin-left: 600px;margin-top: 10px;">
+        <h1>List the doctor</h1>
 
-</div>
+    </div>
 <%- include('table/doctorTable') %>
-
+<% }  else { %>
+    <div style="margin-left: 150.;margin-left: 600px;margin-top: 10px;">
+      <h1>No Record Found</h1>
+  
+  </div>  
+     <% } %> 
 
 
 

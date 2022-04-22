@@ -33,7 +33,8 @@ const DeparmentSchema ={
     deparmentName: String,
     deparmentHead: String,
     departmentArea:String,
-    deparmentEmployment: Number
+    deparmentEmployment: Number,
+    deparmentPhoneNo: Number
 }
 // Patient Schema
 
@@ -215,6 +216,7 @@ app.get("/patient",function(req,res){
     res.render("patient")
 });
 
+
 app.post("/docForm",function(req,res){
     const newDoctor = new Doctor({
         doctorName: req.body.dname,
@@ -227,6 +229,44 @@ app.post("/docForm",function(req,res){
     newDoctor.save();
     res.redirect("/Doc");
 });
+app.get("/Deldoc",function(req,res){
+    Patient.find({},function(err,patient){
+        Doctor.find({},function(err,doctors){
+            Deparment.find({},function(err,departs){
+                res.render("Deletedoc",{pats:patient,dots:doctors,dets:departs});
+            });
+        });
+    }); 
+});
+app.get("/Delclinic",function(req,res){
+    Patient.find({},function(err,patient){
+        Doctor.find({},function(err,doctors){
+            Deparment.find({},function(err,departs){
+                res.render("Deleteclinic",{pats:patient,dots:doctors,dets:departs});
+            });
+        });
+    }); 
+});
+app.get("/Delclinic",function(req,res){
+    Patient.find({},function(err,patient){
+        Doctor.find({},function(err,doctors){
+            Deparment.find({},function(err,departs){
+                res.render("Deleteclinic",{pats:patient,dots:doctors,dets:departs});
+            });
+        });
+    }); 
+});
+app.get("/Delpatient",function(req,res){
+    Patient.find({},function(err,patient){
+        Doctor.find({},function(err,doctors){
+            Deparment.find({},function(err,departs){
+                res.render("Deletepatient",{pats:patient,dots:doctors,dets:departs});
+            });
+        });
+    }); 
+});
+
+
 app.get("/Doc",function(req,res){
     res.render("doctorForm");
 });
@@ -238,15 +278,16 @@ app.post("/reacherDept",function(req,res){
         deparmentName: req.body.deptname,
         deparmentHead: req.body.deptname,
         departmentArea: req.body.state,
-        deparmentEmployment: req.body.empl
+        deparmentEmployment: req.body.empl,
+        deparmentPhoneNo: req.body.phone
     });
     console.log(newDepartment);
     newDepartment.save();
     res.redirect("/departmentForm");
     
 });
-app.post("/delete",function(req,res){
-    // const Doctorcheck=req.body.checkbox
+app.post("/Deldoc",function(req,res){
+    const Doctorcheck=req.body.checkbox
     console.log(); 
     Doctor.findByIdAndRemove(Doctorcheck,function(err){
         if(err){
