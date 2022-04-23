@@ -119,7 +119,9 @@ app.get("/succes",function(req,res){
         Doctor.find({},function(err,doctors){
             Deparment.find({},function(err,departs){
                 User.find({},function(err,user){
-                    res.render("succes",{pats:patient,dots:doctors,dets:departs,user:user});
+                    State.find({},function(err,state){
+                        res.render("succes",{pats:patient,dots:doctors,dets:departs,user:user,state:state});
+                });
             });
         });
     });
@@ -313,7 +315,7 @@ app.post("/state",function(req,res){
         DoctorState:req.body.state
      });
      console.log(state2);
-    //  state2.save();
+     state2.save();
      res.redirect("succes");
 });    
 
