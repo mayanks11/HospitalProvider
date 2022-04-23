@@ -1,6 +1,4 @@
-body{
-  background-color: white;
-}
+
 .fonts{
   font-size: 30px;
 }
@@ -8,20 +6,13 @@ body{
   position: sticky;
   bottom: 1rem;
 }
-.logo-image{
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-top: -6px;
-}
 /* table */
 #customers {
-    margin: 120px 90px 20px 208px;
-    /* margin: 120px 70px 20px 208px; */
+    margin: 120px 70px 20px 208px;
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 20%;
+    background-color: white;
   }
   
   #customers td, #customers th {
@@ -29,7 +20,7 @@ body{
     padding: 20px;
   }
   
-  #customers tr:nth-child(even){background-color: #11c62f;}
+ 
   
   #customers tr:hover {background-color: #ddd;}
   
@@ -217,17 +208,15 @@ p {
 
 /* General Links */
 
+a.article{
+  color: black;
 
-
-a:hover,
-a:active,
-a:focus {
-    outline: none;
-    text-decoration: none;
-    color: #72afd2;
-    -webkit-transition: all .3s;
-    transition: all .3s;
 }
+a.article:hover{
+  color: white;
+}
+
+
 
 hr {
     border-top: 1px solid #e1e6ef;
@@ -246,7 +235,10 @@ hr {
     font-family: 'Alegreya Sans', sans-serif;
     
     transition: width 0.3s ease-in-out;
-    background-color: #b5c01f;
+    background-color: #0a5b5a;
+}
+.main-sidebar a {
+  color: white;
 }
 .sidebarGo{
     transform: translate(-264px,108px);
@@ -283,5 +275,30 @@ listing{border-top:1px solid #d9d9d9; padding:15px 18px;}
 .size{
  
     height:500px;
+}
+
+p.text1{
+  color:white;
+  
+}
+p.pic{
+
+  text-align: left;
+  margin-bottom: 100px;
+  
+}
+div.container-fluid{
+  background-color: #0a5b5a;
+}
+
+a{
+  color: black;
+}
+.logo-image{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
 }
 

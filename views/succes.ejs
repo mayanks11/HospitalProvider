@@ -1,82 +1,80 @@
 <%- include('partials/header') %>
-<ul class="nav justify-content-center">
+<nav class="patientNav">
+  <div class="container-fluid" style="height: 75px;">
+       <a class="navbar-brand" href="/"><h1 style="font-size: 30px;"><b><img src = "images/logo.png" width = "150px"alt="."></b></h1></a>
+  </div>
+</nav>
+
+<ul class="nav justify-content-center" >
   <li class="nav-item">
     <h1>Welcome <%=pats[pats.length-1].patientName %> </h1>
     <h6> Thank You for registering </h6>
-    <h3><a href="/register">Back to register</a></h3>
-
-  </li>
-
-
+ </li>
 </ul>
+
 <div class="card" style="width: 18rem; left: 150px">
   <div class="card-body">
     <strong><u>
         <h5 class="card-title">Patient Profile</h5>
       </u></strong>
-    <h6 class="card-subtitle mb-2 text-muted">Name:- <%=pats[pats.length-1].patientName %> </h6>
-    <h6 class="card-subtitle mb-2 text-muted">Sex:- <%=pats[pats.length-1].patientSex %></h6>
-    <h6 class="card-subtitle mb-2 text-muted">Blood Group:- <%=pats[pats.length-1].patientBldgp %></h6>
-    <h6 class="card-subtitle mb-2 text-muted">Area :-<%=pats[pats.length-1].patientArea %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Name         : <%=pats[pats.length-1].patientName %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted">Sex          : <%=pats[pats.length-1].patientSex %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Blood Group  : <%=pats[pats.length-1].patientBldgp %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Area         : <%=pats[pats.length-1].patientArea %></h6>
     <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a> -->
   </div>
 </div>
+<form action="/state" method="post" style="margin-top: 99px;">    
+      
+  
+      
+  <div class="form-floating">
+    <select name="state" id="state" class="form-control bottom">
+      <option>State / UT *</option>
+                                  <option value="Andaman">Andaman &amp; Nicobar Islands</option>
+                                  <option value="Andhra_Pradesh">Andhra Pradesh</option>
+                                  <option value="Arunachal_Pradesh">Arunachal Pradesh</option>
+                                  <option value="Assam">Assam</option>
+                                  <option value="Bihar">Bihar</option>
+                                  <option value="Chandigarh">Chandigarh</option>
+                                  <option value="Chattisgarh">Chattisgarh</option>
+                                  <option value="Dadra_Nagar_Haveli">Dadra &amp; Nagar Haveli</option>
+                                  <option value="Daman_Diu">Daman &amp; Diu</option>
+                                  <option value="Goa">Goa</option>
+                                  <option value="Gujarat">Gujarat</option>
+                                  <option value="Haryana">Haryana</option>
+                                  <option value="Himachal_Pradesh">Himachal Pradesh</option>
+                                  <option value="Jammu_Kashmir">Jammu and Kashmir</option>
+                                  <option value="Jharkhand">Jharkhand</option>
+                                  <option value="Karnataka">Karnataka</option>
+                                  <option value="Kerala">Kerala</option>
+                                  <option value="Ladakh">Ladakh</option>
+                                  <option value="Lakshadweep">Lakshadweep</option>
+                                  <option value="Madhya_Pradesh">Madhya Pradesh</option>
+                                  <option value="Maharashtra">Maharashtra</option>
+                                  <option value="Manipur">Manipur</option>
+                                  <option value="Meghalaya">Meghalaya</option>
+                                  <option value="Mizoram">Mizoram</option>
+                                  <option value="Nagaland">Nagaland</option>
+                                  <option value="NCR">NCT OF Delhi</option>
+                                  <option value="Odisha">Odisha</option>
+                                  <option value="Puducherry">Puducherry</option>
+                                  <option value="Punjab">Punjab</option>
+                                  <option value="Rajasthan">Rajasthan</option>
+                                  <option value="Sikkim">Sikkim</option>
+                                  <option value="Tamil_Nadu">Tamil Nadu</option>
+                                  <option value="Telangana">Telangana</option>
+                                  <option value="Tripura">Tripura</option>
+                                  <option value="Uttar_Pradesh">Uttar Pradesh</option>
+                                  <option value="Uttarakhand">Uttarakhand</option>
+                                  <option value="West_Bengal">West Bengal</option>
+`          </select>
+</div>
+<button class="w-10 btn btn-lg btn-primary"  type="submit">Submit </button>
+</form>
 
-<div class="card" style="width: 18rem; left: 34px;margin-left: 1130px;margin-bottom: 0px;">
-  <div class="card-body">
-    <strong><u>
-        <h5 class="card-title">Search  the all Area</h5>
-        <div class="form-floating">
-          <select name="state" id="state" class="form-control bottom ">
-            <option value="">State / UT *</option>
-                                        <option value="Andaman">Andaman &amp; Nicobar Islands</option>
-                                        <option value="Andhra_Pradesh">Andhra Pradesh</option>
-                                        <option value="Arunachal_Pradesh">Arunachal Pradesh</option>
-                                        <option value="Assam">Assam</option>
-                                        <option value="Bihar">Bihar</option>
-                                        <option value="Chandigarh">Chandigarh</option>
-                                        <option value="Chattisgarh">Chattisgarh</option>
-                                        <option value="Dadra_Nagar_Haveli">Dadra &amp; Nagar Haveli</option>
-                                        <option value="Daman_Diu">Daman &amp; Diu</option>
-                                        <option value="Goa">Goa</option>
-                                        <option value="Gujarat">Gujarat</option>
-                                        <option value="Haryana">Haryana</option>
-                                        <option value="Himachal_Pradesh">Himachal Pradesh</option>
-                                        <option value="Jammu_Kashmir">Jammu and Kashmir</option>
-                                        <option value="Jharkhand">Jharkhand</option>
-                                        <option value="Karnataka">Karnataka</option>
-                                        <option value="Kerala">Kerala</option>
-                                        <option value="Ladakh">Ladakh</option>
-                                        <option value="Lakshadweep">Lakshadweep</option>
-                                        <option value="Madhya_Pradesh">Madhya Pradesh</option>
-                                        <option value="Maharashtra">Maharashtra</option>
-                                        <option value="Manipur">Manipur</option>
-                                        <option value="Meghalaya">Meghalaya</option>
-                                        <option value="Mizoram">Mizoram</option>
-                                        <option value="Nagaland">Nagaland</option>
-                                        <option value="NCR">NCT OF Delhi</option>
-                                        <option value="Odisha">Odisha</option>
-                                        <option value="Puducherry">Puducherry</option>
-                                        <option value="Punjab">Punjab</option>
-                                        <option value="Rajasthan">Rajasthan</option>
-                                        <option value="Sikkim">Sikkim</option>
-                                        <option value="Tamil_Nadu">Tamil Nadu</option>
-                                        <option value="Telangana">Telangana</option>
-                                        <option value="Tripura">Tripura</option>
-                                        <option value="Uttar_Pradesh">Uttar Pradesh</option>
-                                        <option value="Uttarakhand">Uttarakhand</option>
-                                        <option value="West_Bengal">West Bengal</option>
-                                </select>
-      </div>
-      </u></strong>
-    
-    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a> -->
-  </div>
-</div>
 
 
   
@@ -84,69 +82,31 @@
 
 
 <!-- Doctor Card -->
-<% console.log(pats[pats.length-1].patientArea);%>
 
-<% for (var i = 0; i < dots.length;   i++) { %>
 
-<% if (dots[i].doctorArea === pats[pats.length-1].patientArea) { %>
-
-<div style="margin-left: 66px;margin-top: 17px;margin-bottom: 10px;">
-  <h5> We found the Doctor listed which us in your area:- </h5>
-</div>
-<div class="card" style="width: 18rem; left: 150px">
-  <div class="card-body">
-    <strong><u>
-        <h5 class="card-title">Doctor Profile</h5>
-      </u></strong>
-    <h6 class="card-subtitle mb-2 text-muted">Name:-<%=dots[i].doctorName %> </h6>
-    <h6 class="card-subtitle mb-2 text-muted">Doctor Specilization:- <%=dots[i].doctorSpecilization %></h6>
-    <h6 class="card-subtitle mb-2 text-muted"> Doctor Phoneno:-<a href="tel:+91<%= dots[i].doctorPhoneno%>"><i
-          class="fa-solid fa-2x fa-phone"></i></a></h6>
-    <h6 class="card-subtitle mb-2 text-muted"> Doctor Area:-<%=dots[i].doctorArea %></h6>
-
-  </div>
+<div style="margin-left: 176px;margin-top: 55px;">
+ <!-- <button class="delete-button btn-bk" onclick= dots._id %>)">Deleteing</button> -->
 </div>
 
-<% } %>
-<% } %>
+<div style="margin-top: 15px;">
+  <a href="#exampleModal" style="top:25px;" data-bs-toggle="modal"><button class="btn-bk" type="button">List The
+      all Doctor which are Available in your City</button></a>
+  <a href="#Clinic" style="top:25px;" data-bs-toggle="modal"><button class="btn-bk" type="button">List The all Clinic
+      which are Available in your City</button></a>
+</div>
+
+
+
 
 <!-- Department Card -->
-<% console.log(dets);%>
-<div style="margin-left: 66px;margin-top: 17px;margin-bottom: 10px;">
+<form action="/state" method="post" style="margin-top: 99px;">    
+      
   
-<h5> We found the Clinic listed which us in your area:- </h5>
-</div>
-<% for (var i = 0; i < dets.length;   i++) { %>
-
-<% if (dets[i].departmentArea === pats[pats.length-1].patientArea) { %>
-
-
-<div class="card" style="width: 18rem; left: 150px">
-  <div class="card-body">
-    <strong><u>
-        <h5 class="card-title">Cinic Profile</h5>
-      </u></strong>
-    <h6 class="card-subtitle mb-2 text-muted"> Cinic Name:-<%=dets[i].deparmentName %> </h6>
-    <h6 class="card-subtitle mb-2 text-muted">Cinic Head:- <%=dets[i].deparmentHead %></h6>
-    <h6 class="card-subtitle mb-2 text-muted"> Clinic Phoneno:-<a href="tel:+91<%= dots[i].doctorPhoneno%>"><i
-          class="fa-solid fa-2x fa-phone"></i></a></h6>
-    <h6 class="card-subtitle mb-2 text-muted"> Clinic Area:-<%=dets[i].departmentArea %></h6>
-
-  </div>
-</div>
-
-<% } %>
-<% } %>
+      
 
 
 <!-- <console.log(pats) %> -->
 
-<div style="margin-top: 15px;">
-  <a href="#exampleModal" style="top:25px;" data-bs-toggle="modal"><button class="btn-bk" type="button">List The
-      all Doctor which are Available</button></a>
-  <a href="#Clinic" style="top:25px;" data-bs-toggle="modal"><button class="btn-bk" type="button">List The all Clinic
-      which are Available</button></a>
-</div>
 
 
 
@@ -165,7 +125,7 @@
       </div>
       <div class="modal-body">
         <ul>
-          <h5>Your Appointment is Books</h5>
+          <!-- <h5>Your Appointment is Books</h5> -->
         </ul>
 
       </div>
@@ -198,75 +158,30 @@
             <th>Doctor Full name</th>
             <th>Speclization</th>
             <th>Year of Experience</th>
+            <th>Doctor phone no</th>
             <th>Doctor Area </th>
             <!-- <th> Book Appointment</th> -->
           </tr>
           <tr>
 
-            <td>
-              <h3><a
-                  href="https://www.healthfrog.in/doctor/dr-amita-patils-dentserve-multispeciality-dental-clinic-thane-fxp39ihh@.html">Dr
-                  Amita Patil</a></h3>
-            </td>
-            <td>DentServe Multispeciality Dental Clinic</td>
-            <td>15</td>
-            <td>
-              <p><i class="fa fa-map-marker"></i>Maharashtra</p>
-            </td>
+            
 
-          </tr>
-          <tr>
-            <td>Dr. Poornima's</td>
-            <td>Neurodiagnosis Clinic</td>
-            <td>15</td>
-            <td>
-              <p><i class="fa fa-map-marker"></i>Mumbai</p>
-            </td>
-
-          </tr>
-          <tr>
-            <td>
-              <h3><a href="https://www.healthfrog.in/doctor/dr-pawan-rathi-mind-center-indore-indore-e@af0ihec.html">Dr
-                  Pawan
-                </a></h3>
-            </td>
-            <td>Rathi Mind Center Indore</td>
-            <td>10</td>
-            <td>
-              <p><i class="fa fa-map-marker"></i> Indore</p>
-            </td>
-
-          </tr>
-          <tr>
-            <td><a
-                href="https://www.healthfrog.in/doctor/dr-manoj-dongare-best-liver-transpkant-surgeon-in-pune-liver-specialist-in-pune-pune-7q8@9w4dh.html">Dr.
-                Manoj Dongare</a></h3>
-            </td>
-            <td>- Best Liver Transpkant Surgeon In Pune | Liver Specialist</td>
-            <td>12</td>
-            <td><i class="fa fa-map-marker"></i>Pune</td>
-          </tr>
-          <tr>
-            <td>
-              <p>Dr. D. Y. Patil Hospital </p>
-            </td>
-            <td> Research Centre, Sant Tukaram Nagar</td>
-            <td>7</td>
-            <td><i class="fa fa-map-marker"></i>Pune</td>
-
-          </tr>
-
-          <% for (var i = 0; i < dots.length;   i++) { %>
-
-          <tr>
-            <td><%= dots[i].doctorName%></td>
-            <td><%= dots[i].doctorSpecilization%></td>
-            <td><%= dots[i].YearofExperience%></td>
-            <td><i class="fa fa-map-marker"></i><%= dots[i].doctorArea%></td>
-
-          </tr>
-          <% } %>
-          </tr>
+          <% for (var i = 0; i < dots.length;   i++) { %>  
+            <% if (dots[i].doctorArea === pats[pats.length-1].patientArea) { %>
+        
+        
+              <tr>
+          <!-- <td><input type="checkbox" name="checkbox" value="<dots[i]._id%>" onChange="this.form.submit()"></td> -->
+                <td><%= dots[i].doctorName%></td>
+                <td><%= dots[i].doctorSpecilization%></td>   
+                <td><%= dots[i].YearofExperience%></td>
+                
+                <td><a href="tel:+91<%= dots[i].doctorPhoneno%>"><%= dots[i].doctorPhoneno%></a></td>
+                <td><%= dots[i].doctorArea%></td>
+                
+            </tr>
+            <% } %>
+      <% } %>
   </table>
 
       </div>
@@ -285,6 +200,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <% if (dets.length !=0) { %>
         <!-- table  -->
         <table id="appointment" style="width:25%;margin-top: 18px;">
           <div class="">
@@ -297,62 +213,39 @@
             <th>No of Employment</th>
             <th>Department Phoneno</th>
           </tr>
-          <tr>
-            <td>DentServe Multispeciality Dental Clinic</td>
-            <td>
-              <h3><a
-                  href="https://www.healthfrog.in/doctor/dr-amita-patils-dentserve-multispeciality-dental-clinic-thane-fxp39ihh@.html">Dr
-                  Amita Patil</a></h3>
-            </td>
-            <td>
-              <p><i class="fa fa-map-marker"></i>Maharashtra</p>
-            </td>
-            <td>15</td>
-            <td><a href="tel:+918965721"></a></td>
+          
+          <% for (var i = 0; i < dets.length;   i++) { %>
+
+                <% if (dets[i].departmentArea === pats[pats.length-1].patientArea) { %>
 
 
-          </tr>
-          <tr>
-            <td>Neurodiagnosis Clinic</td>
-            <td>Dr. Poornima's</td>
-            <td>
-              <p><i class="fa fa-map-marker"></i>Mumbai</p>
-            </td>
-            <td>15</td>
-            <td>+9178451230571</td>
+                  <table id="customers" style="margin-left: 441px;margin-top: 80px;">
+                    <tr>
+                      <th>Name of Department</th><th>Department Head</th><th>Department Area</th><th>No of Employment</th><th>Department Phoneno</th>
+                    </tr>
+                    <!-- <console.log(dets); %>  -->
+                    <% for (var i = 0; i < dets.length;  i++) { %>
+                      <tr>
+                          <td><%= dets[i].deparmentName%></td>
+                          <td><%= dets[i].deparmentHead%></td>   
+                          <td><%= dets[i].departmentArea%></td>
+                          <td><%= dets[i].deparmentEmployment%></td>
+                          <td><%= dets[i].deparmentPhoneNo%></td>
+                
+                        </tr>    
+                      <% } %>
+                
+                </table>
 
-          </tr>
-          <tr>
-            <td>Rathi Mind Center Indore</td>
-            <td>
-              <h3><a href="https://www.healthfrog.in/doctor/dr-pawan-rathi-mind-center-indore-indore-e@af0ihec.html">Dr
-                  Pawan
-                </a></h3>
-            </td>
-            <td>
-              <p><i class="fa fa-map-marker"></i> Indore</p>
-            </td>
-            <td>10</td>
-            <td><a href="tel:+91785106215"></a></td>
-
-          </tr>
-          <% for (var i = 0; i < dets.length;  i++) { %>
-          <tr>
-            <td><%= dets[i].deparmentName%></td>
-            <td><%= dets[i].deparmentHead%></td>
-            <td><%= dets[i].departmentArea%></td>
-            <td><%= dets[i].deparmentEmployment%></td>
-            <td><%= dets[i].deparmentPhoneNumber%></td>
-
-          </tr>
+              <% } %>
           <% } %>
-          </tr>
-        </table>
-
+          <% }  else { %>
+            <h1>No Record Found</h1>
+          
+          </div>  
+             <% } %>  
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+      
     </div>
   </div>
 </div>

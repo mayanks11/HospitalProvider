@@ -1,6 +1,6 @@
 <%- include('partials/header') %>
 <%- include('partials/navbar2') %>
-<%- include('partials/sidebar') %>
+
 <main class="form-signin  top-margin1" style="margin-top: 50px;">
     <form action="/patientForm" method="post">    
       <h1 class="h3 mb-3 mb-4 fw-normal">Patient Form </h1>   
@@ -30,7 +30,7 @@
       <label for="floatingPhone">Patient Phone Number:-</label>
   </div>
       <div class="form-floating">
-        <select name="state" id="state" class="form-control bottom ">
+        <select name="state" id="selectBox" class="form-control bottom "value="" onchange="changeFunc();">
           <option value="">State / UT *</option>
                                       <option value="Andaman">Andaman &amp; Nicobar Islands</option>
                                       <option value="Andhra_Pradesh">Andhra Pradesh</option>
@@ -88,6 +88,11 @@
       <p class="mt-5 mb-3 text-muted">&copy; hostpital</p>
     </form>
   </main>
+ 
+    
+    
+   
+
 
 
 <%- include('partials/footer') %>

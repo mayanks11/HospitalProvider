@@ -28,6 +28,7 @@ var con1= mongoose.createConnection("mongodb://localhost:27017/patientDetails");
 var con2= mongoose.createConnection("mongodb://localhost:27017/doctorDetails");
 var con3= mongoose.createConnection("mongodb://localhost:27017/departmentDetails");
 var con4 = mongoose.createConnection("mongodb://localhost:27017/LoginDatabase");
+var con5 = mongoose.createConnection("mongodb://localhost:27017/State");
 // Cilic Schema
 const DeparmentSchema ={
     deparmentName: String,
@@ -58,11 +59,15 @@ const DoctorSchema ={
     doctorArea: String,
    
 };
+const StateSchema={
+    DoctorState :String
+}
 
 
 const Patient=con1.model("Patient",PatientSchema);
 const Doctor=con2.model("Doctor",DoctorSchema);
 const Deparment=con3.model("Deparment",DeparmentSchema);
+const State=con4.model("Deparment",StateSchema);
 
 // User Schema
 const userSchema= new mongoose.Schema({
@@ -301,6 +306,18 @@ app.post("/Deldoc",function(req,res){
     })
      
 });
+app.post("/state",function(req,res){
+    console.log(req.body.state);
+    
+    const state2 = new State({
+        DoctorState:req.body.state
+     });
+     console.log(state2);
+    //  state2.save();
+     res.redirect("succes");
+});    
+
+
 
 
  app.listen(process.env.PORT|| 2000,function(){

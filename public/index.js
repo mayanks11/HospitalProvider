@@ -50,3 +50,14 @@ function action() {
           }
         }
       }
+      
+
+function update() {
+  var select = document.getElementById('language');
+  var option = select.options[select.selectedIndex];
+
+  document.getElementById('value').value = option.value;
+  document.getElementById('text').value = option.text;
+}
+
+update();
