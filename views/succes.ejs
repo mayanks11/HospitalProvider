@@ -73,18 +73,14 @@
   </div>
 </div>
 
-
+<% console.log(state); %> 
  
-<!-- table of clinic -->
+<!-- table of doctor stared here -->
 <% if (dots.length !=0) { %>
   
   <% for (var i = 0; i < dots.length;   i++) { %>
-
-    <% for (var i = 0; i < dots.length;  i++) { %>
+      <% for (var i = 0; i < dots.length;  i++) { %>
         <% if ( pats[pats.length-1].patientArea === dots[i].doctorArea) { %>
-           
-
-
           <table id="customers" style="margin-left: 441px;margin-top: 40px;">
             <tr>
               <th>Doctor Full name</th>
@@ -92,19 +88,16 @@
               <th>Year of Experience</th>
               <th>Doctor phone no</th>
               <th>Doctor Area </th>
-            </tr>
-                  
-              <tr> 
+            </tr>     
+            <tr> 
                 <td><%= dots[i].doctorName%></td>
                 <td><%= dots[i].doctorSpecilization%></td>   
                 <td><%= dots[i].YearofExperience%></td>
                 <td><a href="tel:+91<%= dots[i].doctorPhoneno%>"><%= dots[i].doctorPhoneno%></a></td>
                 <td><%= dots[i].doctorArea%></td>
-            </tr>   
-              <% } %>
-        
+            </tr>         
         </table>
-
+        <% } %>
       <% } %>
   <% } %>
   <% }  else { %>
@@ -113,34 +106,32 @@
   
   </div>  
      <% } %> 
+ <!-- table of doctor Endersd here -->    
         
-<!-- table of clinic -->
+<!-- table of clinic stared here -->
 <% if (dets.length !=0) { %>
   <% for (var i = 0; i < dets.length;   i++) { %>
       
     <% if ( dets[i].departmentAre === pats[pats.length-1].patientArea) { %>  
               <table id="customers" style="width:25%;margin-top: 20px;">
-
-                <th>Name of Department</th><th>Department Head</th><th>Department Area</th><th>No of Employment</th><th>Department Phoneno</th>
-            
-              
-            <tr>
-              <td><%= dets[i].deparmentName%></td>
-              <td><%= dets[i].deparmentHead%></td>   
-              <td><%= dets[i].departmentArea%></td>
-              <td><%= dets[i].deparmentEmployment%></td>
-              <td><%= dets[i].deparmentPhoneNo%></td>
-    
-            </tr>
-                <% } %>
+                  <th>Name of Department</th><th>Department Head</th><th>Department Area</th><th>No of Employment</th><th>Department Phoneno</th>             
+                  <tr>
+                    <td><%= dets[i].deparmentName%></td>
+                    <td><%= dets[i].deparmentHead%></td>   
+                    <td><%= dets[i].departmentArea%></td>
+                    <td><%= dets[i].deparmentEmployment%></td>
+                    <td><%= dets[i].deparmentPhoneNo%></td>
+          
+                  </tr>
+                      <% } %>
           </table>
-       <% } %> <%  } else { %>
+<% } %> <%  } else { %>
         <div style="margin-left: 210px;">
           <h1>No Record Found</h1>
         
         </div>
         <% } %> 
-
+<!-- table of clinic stared here -->
 
 
 
