@@ -50,7 +50,7 @@ const PatientSchema ={
    patientNumber:Number
    
 };
-// Patient Schema
+// Doctor Schema
 const DoctorSchema ={
     doctorName :String,
     doctorSpecilization :String, 
@@ -59,19 +59,24 @@ const DoctorSchema ={
     doctorArea: String,
    
 };
+// State Schema
 const StateSchema={
     DoctorState :String
 }
 
-
+// Patient model
 const Patient=con1.model("Patient",PatientSchema);
+// Doctor Model
 const Doctor=con2.model("Doctor",DoctorSchema);
+// Deparment Model
 const Deparment=con3.model("Deparment",DeparmentSchema);
-const State=con4.model("Deparment",StateSchema);
+// State Model
+const State=con5.model("Deparment",StateSchema);
 
 // User Schema
 const userSchema= new mongoose.Schema({
-    
+    firstName: String,
+    lastName: String,
     email: String,
     password:String
 });
@@ -236,6 +241,16 @@ app.post("/docForm",function(req,res){
     newDoctor.save();
     res.redirect("/Doc");
 });
+app.post("/state",function(req,res){
+    console.log(req.body.state);
+    
+    const state2 = new State({
+        DoctorState:req.body.state
+     });
+     console.log(state2);
+     state2.save();
+     res.redirect("succes");
+});   
 app.get("/Deldoc",function(req,res){
     Patient.find({},function(err,patient){
         Doctor.find({},function(err,doctors){
@@ -293,31 +308,50 @@ app.post("/reacherDept",function(req,res){
     res.redirect("/departmentForm");
     
 });
-app.post("/Deldoc",function(req,res){
+app.post("/Docdelete",function(req,res){
     const Doctorcheck=req.body.checkbox
-    console.log(); 
+    console.log(Doctorcheck); 
     Doctor.findByIdAndRemove(Doctorcheck,function(err){
         if(err){
             console.log(err);
         }
         else{
             console.log("Successfully remove the item");
-            res.redirect("/admin") 
+            res.redirect("/Deldoc") 
         }
 
     })
      
 });
-app.post("/state",function(req,res){
-    console.log(req.body.state);
-    
-    const state2 = new State({
-        DoctorState:req.body.state
-     });
-     console.log(state2);
-     state2.save();
-     res.redirect("succes");
-});    
+app.post("/cildelete",function(req,res){
+    const Ciliccheck=req.body.checkbox
+    console.log(Ciliccheck);
+    Deparment.findByIdAndRemove(Ciliccheck,function(err){
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log("Successfully remove the item");
+            res.redirect("/Delclinic") 
+        }
+
+    })
+});
+app.post("/patdelete",function(req,res){
+    const Patientcheck=req.body.checkbox
+    console.log(Patientcheck);
+    Patient.findByIdAndRemove(Patientcheck,function(err){
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log("Successfully remove the item");
+            res.redirect("/Delpatient") 
+        }
+    })
+});
+
+   
 
 
 
