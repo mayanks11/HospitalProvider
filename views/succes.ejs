@@ -73,7 +73,7 @@
   </div>
 </div>
 
-<% console.log(state); %> 
+
  
 <!-- table of doctor stared here -->
 <% if (dots.length !=0) { %>
@@ -267,8 +267,7 @@
       </div>
       <div class="modal-body">
         <% if (dets.length !=0) { %>
-          <% console.log(dets.leng);
-           %> 
+         
         <!-- table  -->
         <table id="appointment" style="width:25%;margin-top: 18px;">
           <div class="">
@@ -336,8 +335,9 @@
               <% for (var i = 0; i < dots.length;   i++) { %>
             
                 <% for (var i = 0; i < dots.length;  i++) { %>
-                    <% if ( pats[pats.length-1].patientArea === dots[i].doctorArea) { %>
-                       
+                    <% if ( state[state.length-1] === dots[i].doctorArea) { %>
+                      <% console.log(state[state.length-1]); %> 
+                      <% console.log(dots[i]); %> 
             
             
                       <table id="appointment" style="width:25%;margin-top: 18px;">

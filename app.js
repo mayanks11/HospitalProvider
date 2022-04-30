@@ -10,6 +10,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 // const md5 =require("md5")
 
 const app= express();
+const State= [];
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
@@ -28,7 +29,7 @@ var con1= mongoose.createConnection("mongodb://localhost:27017/patientDetails");
 var con2= mongoose.createConnection("mongodb://localhost:27017/doctorDetails");
 var con3= mongoose.createConnection("mongodb://localhost:27017/departmentDetails");
 var con4 = mongoose.createConnection("mongodb://localhost:27017/LoginDatabase");
-var con5 = mongoose.createConnection("mongodb://localhost:27017/State");
+// var con5 = mongoose.createConnection("mongodb://localhost:27017/State");
 // Cilic Schema
 const DeparmentSchema ={
     deparmentName: String,
@@ -60,9 +61,9 @@ const DoctorSchema ={
    
 };
 // State Schema
-const StateSchema={
-    DoctorState :String
-}
+// const StateSchema={
+//     DoctorState :String
+// }
 
 // Patient model
 const Patient=con1.model("Patient",PatientSchema);
@@ -71,7 +72,7 @@ const Doctor=con2.model("Doctor",DoctorSchema);
 // Deparment Model
 const Deparment=con3.model("Deparment",DeparmentSchema);
 // State Model
-const State=con5.model("Deparment",StateSchema);
+// const State=con5.model("Deparment",StateSchema);
 
 // User Schema
 const userSchema= new mongoose.Schema({
@@ -124,13 +125,13 @@ app.get("/succes",function(req,res){
         Doctor.find({},function(err,doctors){
             Deparment.find({},function(err,departs){
                 User.find({},function(err,user){
-                    State.find({},function(err,state){
-                        res.render("succes",{pats:patient,dots:doctors,dets:departs,user:user,state:state});
+                    // State.find({},function(err,state){
+                        res.render("succes",{pats:patient,dots:doctors,dets:departs,user:user,state:State});
                 });
             });
         });
     });
-});
+// });
 }else{
     res.redirect("/login");
 }
@@ -243,12 +244,12 @@ app.post("/docForm",function(req,res){
 });
 app.post("/state",function(req,res){
     console.log(req.body.state);
-    
-    const state2 = new State({
-        DoctorState:req.body.state
-     });
-     console.log(state2);
-     state2.save();
+    State.push(req.body.state);
+    // const state2 = new State({
+    //     DoctorState:req.body.state
+    //  });
+    //  console.log(state2);
+    //  state2.save();
      res.redirect("succes");
 });   
 app.get("/Deldoc",function(req,res){
