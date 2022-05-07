@@ -1,4 +1,7 @@
-
+.include{
+  text-align: center;
+  float: center;
+}
 .fonts{
   font-size: 30px;
 }
@@ -300,5 +303,38 @@ a{
   border-radius: 50%;
   overflow: hidden;
   margin-top: -6px;
+}
+#testmorial{
+  
+}
+
+.flex-container {
+  display: flex;
+ 
+}
+
+.flex-container > div  {
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+.box-row li a {
+  left: 1400px;
+}
+@media  (max-width: 600px) {
+  #testmorial{
+    height: 146.25%;
+  width: 94%;
+  margin-left: 2%;
+  margin-right: 1.5%;
+  }
+  .box-row{
+  margin-left: 233px;
+  }
+
+}
+.include{
+  text-align: center;
+  float: center;
 }
 
